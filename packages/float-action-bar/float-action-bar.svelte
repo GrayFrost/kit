@@ -114,27 +114,27 @@
 
   const onMouseMove = (e) => {
     if (isDragging) {
-      const offsetX = (e.pageX - dragInfo.offsetX);
+      const offsetX = e.pageX - dragInfo.offsetX;
       const offsetY = e.pageY - dragInfo.offsetY;
       setBoundary(offsetX, offsetY);
     }
-  }
+  };
+
   const onMouseUp = () => {
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
     isDragging = false;
-  }
+  };
+
   const onMouseDown = (e) => {
     e.preventDefault();
-    dragInfo.offsetX =
-         e.pageX - dragInfo.endX;
-      dragInfo.offsetY =
-         e.pageY - dragInfo.endY;
+    dragInfo.offsetX = e.pageX - dragInfo.endX;
+    dragInfo.offsetY = e.pageY - dragInfo.endY;
 
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseup', onMouseUp);
-      isDragging = true;
-  }
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+    isDragging = true;
+  };
 
   onMount(() => {
     detectBoundary();
