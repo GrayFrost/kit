@@ -1,0 +1,8 @@
+{
+  "name": "kit",
+  "private": true,
+  "workspaces": [
+    "docs",
+    "packages/*"
+  ]
+}
