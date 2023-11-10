@@ -1,6 +1,9 @@
 {
   "name": "kit",
   "private": true,
+  "scripts": {
+    "build": "pnpm -r --parallel --filter=./packages/* run build"
+  },
   "workspaces": [
     "docs",
     "packages/*"
